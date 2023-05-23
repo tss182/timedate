@@ -11,6 +11,6 @@
     )
     
     func main()  {
-    	startDate,endDate := date.GetStartEndDate(time.Now(),"month")
+        startDate,endDate := date.GetStartEndDate(time.Now(),date.Month)
         fmt.Println(startDate,endDate)
     }

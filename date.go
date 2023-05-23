@@ -4,7 +4,11 @@ import (
 	"time"
 )
 
-var dateFormat = "2006-01-02"
+const (
+	dateFormat = "2006-01-02"
+	Week       = "week"
+	Month      = "month"
+)
 
 func beginOfMonth(date time.Time) time.Time {
 	return date.AddDate(0, 0, -date.Day()+1)
@@ -16,11 +20,11 @@ func endOfMonth(date time.Time) time.Time {
 
 func GetStartEndDate(date time.Time, optionDate string) (startDate string, endDate string) {
 	switch optionDate {
-	case "week":
+	case Week:
 		weekday := int(date.Weekday())
 		startDate = date.AddDate(0, 0, -weekday).Format(dateFormat)
 		endDate = date.AddDate(0, 0, 7-weekday-1).Format(dateFormat)
-	case "month":
+	case Month:
 		startDate = beginOfMonth(date).Format(dateFormat)
 		endDate = endOfMonth(date).Format(dateFormat)
 	default:
