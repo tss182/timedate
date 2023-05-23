@@ -1,5 +1,5 @@
 # Install
-    go get github.com/tss182/date
+    go get github.com/tss182/timedate
 
 # How to using
 
@@ -7,10 +7,10 @@
     
     import (
     	"fmt"
-    	"github.com/tss182/date"
+    	"github.com/tss182/timedate"
     )
     
     func main()  {
-        startDate,endDate := date.GetStartEndDate(time.Now(),date.Month)
+        startDate,endDate := timedate.GetStartEndDate(time.Now(),date.Month)
         fmt.Println(startDate,endDate)
     }
