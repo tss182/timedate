@@ -1,4 +1,4 @@
-package date
+package timedate
 
 import (
 	"time"
